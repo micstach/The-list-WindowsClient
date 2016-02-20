@@ -40,7 +40,7 @@
             this.browser.Name = "browser";
             this.browser.Size = new System.Drawing.Size(1236, 1279);
             this.browser.TabIndex = 0;
-            this.browser.Url = new System.Uri("http://localhost", System.UriKind.Absolute);
+            this.browser.Url = new System.Uri("", System.UriKind.Relative);
             // 
             // WebClient
             // 
@@ -48,8 +48,10 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1236, 1279);
             this.Controls.Add(this.browser);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
             this.Name = "WebClient";
             this.Text = "The-List";
+            this.Load += new System.EventHandler(this.WebClient_Load);
             this.ResumeLayout(false);
 
         }
