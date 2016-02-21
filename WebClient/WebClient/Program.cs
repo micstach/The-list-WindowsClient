@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace WebClient
+namespace TheListClient
 {
     static class Program
     {
@@ -16,7 +16,7 @@ namespace WebClient
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new WebClient());
+            Application.Run(new TheListClient());
         }
     }
 }

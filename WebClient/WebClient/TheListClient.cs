@@ -9,9 +9,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace WebClient
+namespace TheListClient
 {
-    public partial class WebClient : Form
+    public partial class TheListClient : Form
     {
         [DllImport("urlmon.dll", CharSet = CharSet.Ansi)]
         private static extern int UrlMkSetSessionOption(int dwOption, string pBuffer, int dwBufferLength, int dwReserved);
@@ -24,7 +24,7 @@ namespace WebClient
 
         DesktopClientBridge _bridge = new DesktopClientBridge();
 
-        public WebClient()
+        public TheListClient()
         {
             InitializeComponent();
 

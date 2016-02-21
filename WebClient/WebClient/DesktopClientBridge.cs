@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace WebClient
+namespace TheListClient
 {
     [ComVisible(true)]
     public class DesktopClientBridge

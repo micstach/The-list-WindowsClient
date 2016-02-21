@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace WebClient.Properties {
+namespace TheListClient.Properties {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
@@ -43,7 +43,7 @@ namespace WebClient.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("staging")]
+        [global::System.Configuration.DefaultSettingValueAttribute("production")]
         public string Environment {
             get {
                 return ((string)(this["Environment"]));
