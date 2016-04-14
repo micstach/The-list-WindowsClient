@@ -9,7 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace TheListClient
+namespace ToDo
 {
     public partial class TheListClient : Form
     {
@@ -29,6 +29,7 @@ namespace TheListClient
             InitializeComponent();
 
             ChangeUserAgent("desktop client");
+            browser.ScriptErrorsSuppressed = true;
         }
 
         private void WebClient_Load(object sender, EventArgs e)
