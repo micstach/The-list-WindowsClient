@@ -1,5 +1,5 @@
 bin 
 obj
-.vs
+WebClient/.vs/
 *.pfx
 *.user

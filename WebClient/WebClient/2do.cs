@@ -41,7 +41,7 @@ namespace ToDo
             string password = credentials.Password;
 
             string localHost = "http://localhost";
-            string remoteHost = "http://todo-micstach.rhcloud.com";
+            string remoteHost = "https://todo-micstach.rhcloud.com";
             string host = (Properties.Settings.Default.Environment == "production") ? remoteHost : localHost;
 
             browser.ObjectForScripting = _bridge;
@@ -62,6 +62,41 @@ namespace ToDo
             }
         }
 
+        private string mouseWheelJS = @"
+            function handle(delta) {
+                window.scrollBy(0,-delta*20)
+            }
+
+            function wheel(event)
+            {
+                var delta = 0;
+                if (!event)
+                    event = window.event;
+
+                if (event.wheelDelta) {
+                    delta = event.wheelDelta / 120;
+                }
+
+                if (delta)
+                    handle(delta);
+                    
+                if (event.preventDefault)
+                    event.preventDefault();
+        
+                event.returnValue = false;
+            }
+
+            if (window.addEventListener)
+                window.onmousewheel = document.onmousewheel = wheel;
+            ";
+
+        private string credentialsBridgeJS = @"
+            function desktopClient_SetUserCredentials(user, password) {
+                window.external.SetUserCredentials(user, password); 
+            };
+            ";
+
+
         private void browser_DocumentCompleted(object sender, WebBrowserDocumentCompletedEventArgs e)
         {
             try
@@ -69,8 +104,10 @@ namespace ToDo
                 // (!) Inject javascript code
                 HtmlDocument doc = browser.Document;
                 HtmlElement script = doc.CreateElement("script");
-                script.InnerText = "function desktopClient_SetUserCredentials(user, password) { window.external.SetUserCredentials(user, password); }";
+                script.InnerText = mouseWheelJS + credentialsBridgeJS;
                 doc.GetElementsByTagName("head")[0].AppendChild(script);
+
+                browser.Document.Body.Style = "overflow:hidden";
             }
             catch
             {
