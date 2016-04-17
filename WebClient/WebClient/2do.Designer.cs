@@ -37,7 +37,7 @@
             this.browser.Dock = System.Windows.Forms.DockStyle.Fill;
             this.browser.IsWebBrowserContextMenuEnabled = false;
             this.browser.Location = new System.Drawing.Point(0, 0);
-            this.browser.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.browser.Margin = new System.Windows.Forms.Padding(2);
             this.browser.MinimumSize = new System.Drawing.Size(14, 13);
             this.browser.Name = "browser";
             this.browser.ScriptErrorsSuppressed = true;
@@ -54,7 +54,7 @@
             this.ClientSize = new System.Drawing.Size(463, 602);
             this.Controls.Add(this.browser);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.MinimumSize = new System.Drawing.Size(478, 442);
             this.Name = "TheListClient";
             this.ShowIcon = false;

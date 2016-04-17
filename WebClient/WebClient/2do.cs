@@ -48,7 +48,7 @@ namespace ToDo
 
             if (string.IsNullOrEmpty(user) || string.IsNullOrEmpty(password))
             {
-                browser.Url = new Uri(host);
+                browser.Url = new Uri(host + @"/login");
             }
             else
             {
